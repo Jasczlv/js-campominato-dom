@@ -70,6 +70,24 @@ html {
   width: calc(100% / 7) !important;
 }
 
+.col-bomb {
+  background-color: rgba(144, 20, 20, 0.9);
+}
 .col-clicked {
   background-color: rgba(111, 109, 115, 0.9);
+}
+
+.punteggio-contenitore {
+  background-color: black;
+  color: white;
+  max-width: fit-content;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.punteggio {
+}
+
+.perso {
+  pointer-events: none;
 }

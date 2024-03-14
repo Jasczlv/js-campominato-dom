@@ -29,8 +29,8 @@ difficile.addEventListener("click", function () {
 play.addEventListener("click", createGrid);
 
 function createGrid() {
-  createBombs();
-  console.log(arrayBombe, arrayCampo);
+  // createBombs();
+  // console.log(arrayBombe, arrayCampo);
   row.innerHTML = ""; //reset
   let quadrato = lato ** 2;
   for (i = 0; i < quadrato; i++) {
@@ -43,22 +43,49 @@ function createGrid() {
     });
   }
 }
+createBombs();
+console.log(arrayBombe);
 
 function createBombs() {
-  arrayBombe = [];
-  arrayCampo = [];
+  arrayBombe = []; //reset del array
+  let uniqueNumber = 0;
+
+  //genera bombe in un array
   do {
-    let uniqueNumber = Math.floor(Math.random() * 100);
-    if (!arrayBombe.includes(uniqueNumber)) {
-      arrayBombe.push(uniqueNumber);
+    uniqueNumber = Math.floor(Math.random() * 100);
+    if (!arrayBombe.includes(uniqueNumber) && arrayBombe.length < 100) {
+      arrayBombe.splice(uniqueNumber, 1, uniqueNumber);
     } else {
+      arrayBombe.push("0");
     }
-  } while (arrayBombe.length < 16);
-  let quadrato = lato ** 2;
-  for (i = 1; i < quadrato + 1; i++) {
-    arrayCampo.push(`cella numero ${i}`);
-  }
+  } while (arrayBombe.length < 100);
 }
+
+// function createBombs() {
+//   arrayBombe = [];
+//   arrayCampo = [];
+//   let uniqueNumber = 0;
+//   let quadrato = lato ** 2;
+
+//   //genera bombe in un array
+//   do {
+//     uniqueNumber = Math.floor(Math.random() * 100);
+//     if (!arrayBombe.includes(uniqueNumber) && arrayBombe.length < 17) {
+//       arrayBombe.push(uniqueNumber);
+//     } else {
+//       arrayBombe.push("0");
+//     }
+//   } while (arrayBombe.length < 100);
+
+//   //genera array del campo
+//   for (i = 1; i < quadrato + 1; i++) {
+//     if (arrayBombe[i] !== "0") {
+//       arrayCampo.splice(i, 1, arrayBombe[i]);
+//     } else {
+//       arrayCampo.push("vuoto");
+//     }
+//   }
+// }
 
 // devo inserire le bombe
 // per inserire le bombe come faccio?

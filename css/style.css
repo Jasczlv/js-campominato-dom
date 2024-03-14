@@ -1,0 +1,75 @@
+*,
+body,
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.bg-black {
+  background-color: black;
+}
+.t-white {
+  color: white;
+}
+
+.f-wrap {
+  flex-wrap: wrap;
+}
+
+.row {
+  display: flex;
+  user-select: none;
+}
+
+.container-game {
+  margin: 0 auto;
+  padding: 50px;
+  max-width: 800px;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.app {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../img/Tresco_Abbey_Garden_-_open_view_in_the_park.png");
+  background-size: cover;
+  background-position: center;
+  background-color: rgb(201, 17, 221);
+}
+
+.bg-personalizzato {
+  background-color: crimson;
+}
+
+.col-difficile,
+.col-media,
+.col-facile {
+  aspect-ratio: 1 / 1 !important;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  flex-grow: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(172, 204, 232, 0.9);
+}
+
+.col-facile {
+  width: calc(100% / 10) !important;
+}
+
+.col-media {
+  width: calc(100% / 9) !important;
+}
+
+.col-difficile {
+  width: calc(100% / 7) !important;
+}
+
+.col-clicked {
+  background-color: rgba(111, 109, 115, 0.9);
+}
